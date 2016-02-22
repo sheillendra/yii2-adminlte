@@ -1,22 +1,22 @@
 {
-	"name": "sheillendra/yii2-adminlte",
-	"description": "Yii2 AdminLTE",
-	"keywords": ["admnlte", "sheillendra", "yii2","yii"],
-	"type": "yii2-extension",
-	"authors": [
-		{
-			"name": "Sheillendra",
-			"email": "sheillendra@yahoo.com"
-		}
-	],
-	"require": {
-		"yiisoft/yii2": "*",
-		"almasaeed2010/adminlte": "~2.3.0",
-		"sheillendra/yii2-theme": "*"
-	},
-	"autoload": {
-		"psr-4": {
-			"sheillendra\\adminlte\\": ""
-		}
-	}
+    "name": "sheillendra/yii2-adminlte",
+    "description": "Yii2 AdminLTE",
+    "keywords": ["admnlte", "sheillendra", "yii2", "yii"],
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "Sheillendra",
+            "email": "sheillendra@yahoo.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "almasaeed2010/adminlte": "~2.3.0",
+        "sheillendra/yii2-theme": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "sheillendra\\adminlte\\": ""
+        }
+    }
 }
