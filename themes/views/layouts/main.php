@@ -1,16 +1,17 @@
 <?php
-
-use sheillendra\jeasyui\themes\assets\AppAsset;
-use yii\helpers\Html;
-use sheillendra\helpers\Regex;
-use yii\helpers\Url;
-use yii\helpers\Json;
-
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use yii\helpers\Html;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use sheillendra\adminlte\themes\assets\AppAsset;
+use common\widgets\Alert;
+
 AppAsset::register($this);
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -21,74 +22,38 @@ AppAsset::register($this);
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body>
-        <div class="main-mask overlay" style="display: none"></div>
-        <div class="main-mask loader" style="display: none">Processing, please wait ...</div>
-        <div id="global-error"></div>
+    <body class="hold-transition fixed skin-blue sidebar-mini">
         <?php $this->beginBody() ?>
+        <div class="wrapper">
+            <?php echo $this->render('_header')?>
+            <!-- Left side column. contains the logo and sidebar -->
+            <?php echo $this->render('_main-sidebar')?>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Dashboard
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <?php echo $content?>
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <?php echo $this->render('_footer');?>
+            <?php echo $this->render('_control-sidebar');?>
+        </div>
         <?php $this->endBody() ?>
     </body>
 </html>
-
-<?php
-$username = Yii::$app->user->identity->username;
-$logoutUrl = Url::to(['/user/logout'],true);
-$profileUrl  = Url::to(['/user/profile'],true);
-$getReferenceUrl = Url::to(['/reference/get'],true);
-$northContent = preg_replace(Regex::htmlMinified, ' ', $this->render('_north-content'));
-$centerContent = '<div id="maintab"></div>';
-$westContent = preg_replace(Regex::htmlMinified, ' ', $this->render('_west-content'));
-
-$this->params['selectedNav'] = isset($this->params['selectedNav']) ? $this->params['selectedNav'] :'nav-dashboard';
-
-require(__DIR__ . '/_nav-item.php');
-
-$modules = Yii::$app->getModules();
-foreach( $modules as $module){
-    if(is_array($module)){
-        if( isset($module['menuNumber']) && method_exists($module['class'], 'setEasyuiNavigation')){
-            $navItemFromModule = $module['class']::setEasyuiNavigation($module['menuNumber']);
-            $navItem = array_merge($navItem,$navItemFromModule);
-        }
-    }elseif(is_object($module)){
-        if(property_exists($module,'menuNumber') && method_exists($module, 'setEasyuiNavigation')){
-            $navItemFromModule = $module::setEasyuiNavigation($module->menuNumber);
-            $navItem = array_merge($navItem,$navItemFromModule);
-        }
-    }
-}
-ksort($navItem);
-$navItem = Json::encode($navItem);
-
-$myRoles = Json::encode(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity->id));
-
-$allRoles = Yii::$app->authManager->getRoles();
-$arrRoles = [];
-foreach($allRoles as $k=>$v){
-    $stdClass = new stdClass();
-    $stdClass->name = $v->name;
-    $arrRoles[] = $stdClass;
-}
-$roles = Json::encode($arrRoles);
-
-$errors = isset($this->params['error'])?"yii.app.errors = ". Json::encode($this->params['error'] ) .";":'';
-        
-$this->registerJs(<<<EOD
-    yii.app.username = '{$username}';
-    yii.app.logoutUrl = '{$logoutUrl}';
-    yii.app.profileUrl = '{$profileUrl}';
-    yii.app.getReferenceUrl = '{$getReferenceUrl}';
-    yii.app.northContent = '{$northContent}';
-    yii.app.centerContent = '{$centerContent}';
-    yii.app.westContent = '{$westContent}';
-    yii.app.navItem = {$navItem};
-    yii.app.selectedNav = '{$this->params['selectedNav']}';
-    yii.app.myRoles = {$myRoles};
-    yii.app.reference.roles = {$roles};
-    {$errors}
-    yii.app.showMainMask();
-    yii.app.init();
-EOD
-);?>
-
-<?php $this->endPage(); ?>
+<?php $this->endPage() ?>

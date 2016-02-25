@@ -20,6 +20,7 @@ class AdminLTEAsset extends AssetBundle {
     public $depends = [
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\web\YiiAsset',
         'sheillendra\theme\assets\FontAwesomeAsset'
     ];
     public $publishOptions=['forceCopy'=>YII_DEBUG];
