@@ -23,9 +23,10 @@ class LoginAsset extends AssetBundle
         'js/login.js'
     ];
     public $depends = [
-        'sheillendra\adminlte\assets\AdminLTEAsset',
+        'sheillendra\adminlte\assets\AdminLTELoginAsset',
         'sheillendra\adminlte\assets\ICheckAsset',
     ];
     
     public $publishOptions=['forceCopy'=>YII_DEBUG];
+    
 }
