@@ -19,7 +19,7 @@ class AdminLTELoginAsset extends AssetBundle {
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\web\YiiAsset',
-        'sheillendra\theme\assets\FontAwesomeAsset'
+        'sheillendra\adminlte\assets\FontAwesomeAsset'
     ];
     public $publishOptions=['forceCopy'=>YII_DEBUG];
 }
