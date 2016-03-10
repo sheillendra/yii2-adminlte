@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace sheillendra\adminlte\themes\assets;
+namespace sheillendra\adminlte\assets;
 
 use yii\web\AssetBundle;
 
@@ -15,7 +15,7 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $sourcePath = '@sheillendra/adminlte/themes/assets';
+    public $sourcePath = '@sheillendra/adminlte/assets';
     public $css = [
         'css/app.css',
     ];

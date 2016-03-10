@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use sheillendra\adminlte\themes\assets\LoginAsset;
+use sheillendra\adminlte\assets\LoginAsset;
 use common\widgets\Alert;
 
 LoginAsset::register($this);
