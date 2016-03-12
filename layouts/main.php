@@ -9,7 +9,10 @@ use yii\widgets\Breadcrumbs;
 use sheillendra\adminlte\assets\AppAsset;
 use common\widgets\Alert;
 
-AppAsset::register($this);
+$appAsset = AppAsset::register($this);
+
+$appAssetDepend = Yii::$app->assetManager->getBundle($appAsset->depends[0]);
+
 ?>
 
 <?php $this->beginPage() ?>
@@ -25,9 +28,9 @@ AppAsset::register($this);
     <body class="hold-transition fixed skin-blue sidebar-mini">
         <?php $this->beginBody() ?>
         <div class="wrapper">
-            <?php echo $this->render('_header')?>
+            <?php echo $this->render('main_header',['appAssetDepend' => $appAssetDepend])?>
             <!-- Left side column. contains the logo and sidebar -->
-            <?php echo $this->render('_main-sidebar')?>
+            <?php echo $this->render('main_main-sidebar',['appAssetDepend' => $appAssetDepend])?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -50,8 +53,8 @@ AppAsset::register($this);
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php echo $this->render('_footer');?>
-            <?php echo $this->render('_control-sidebar');?>
+            <?php echo $this->render('main_footer');?>
+            <?php echo $this->render('main_control-sidebar');?>
         </div>
         <?php $this->endBody() ?>
     </body>

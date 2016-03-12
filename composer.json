@@ -11,7 +11,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "almasaeed2010/adminlte": "2.3.0",
+        "almasaeed2010/adminlte": "~2.3.0",
         "bower-asset/icheck": "1.0.2",
         "bower-asset/font-awesome": "*"
     },
