@@ -28,18 +28,15 @@ $appAssetDepend = Yii::$app->assetManager->getBundle($appAsset->depends[0]);
     <body class="hold-transition fixed skin-blue sidebar-mini">
         <?php $this->beginBody() ?>
         <div class="wrapper">
-            <?php echo $this->render('main_header',['appAssetDepend' => $appAssetDepend])?>
+            <?php echo $this->render('@app/views/layouts/main_header',['appAssetDepend' => $appAssetDepend])?>
             <!-- Left side column. contains the logo and sidebar -->
-            <?php echo $this->render('main_main-sidebar',['appAssetDepend' => $appAssetDepend])?>
+            <?php echo $this->render('@app/views/layouts/main_main-sidebar',['appAssetDepend' => $appAssetDepend])?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
-                        Dashboard
-                        <small>Control panel</small>
-                    </h1>
+                    <h1><?php echo $this->params['page-title']?></h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Dashboard</li>
@@ -53,8 +50,8 @@ $appAssetDepend = Yii::$app->assetManager->getBundle($appAsset->depends[0]);
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php echo $this->render('main_footer');?>
-            <?php echo $this->render('main_control-sidebar');?>
+            <?php echo $this->render('@app/views/layouts/main_footer');?>
+            <?php echo $this->render('@app/views/layouts/main_control-sidebar');?>
         </div>
         <?php $this->endBody() ?>
     </body>
