@@ -15,7 +15,8 @@
         "bower-asset/icheck": "~1.0.2",
         "bower-asset/font-awesome": "*",
         "bower-asset/ionicons": "~2.0.1",
-        "bower-asset/jquery-slimscroll": "~1.3.7"
+        "bower-asset/jquery-slimscroll": "~1.3.7",
+        "bower-asset/jquery-ui": "~1.11.4"
     },
     "autoload": {
         "psr-4": {

@@ -21,7 +21,8 @@ class AdminLTEAsset extends AssetBundle {
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\web\YiiAsset',
-        'sheillendra\adminlte\assets\FontAwesomeAsset'
+        'sheillendra\adminlte\assets\FontAwesomeAsset',
+        'sheillendra\adminlte\assets\SlimScrollAsset'
     ];
     public $publishOptions=['forceCopy'=>YII_DEBUG];
 }
