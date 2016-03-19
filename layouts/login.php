@@ -44,4 +44,4 @@ EOD
 ?>
 
 <?php
-$this->endPage();
+$this->endPage();?>
