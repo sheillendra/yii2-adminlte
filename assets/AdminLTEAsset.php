@@ -19,6 +19,7 @@ class AdminLTEAsset extends AssetBundle {
     ];
     public $depends = [
         'yii\web\JqueryAsset',
+        'sheillendra\adminlte\assets\JqueryUIAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\web\YiiAsset',
         'sheillendra\adminlte\assets\FontAwesomeAsset',

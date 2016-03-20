@@ -3,8 +3,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use sheillendra\adminlte\assets\AppAsset;
 use common\widgets\Alert;
@@ -37,14 +35,28 @@ $appAssetDepend = Yii::$app->assetManager->getBundle($appAsset->depends[0]);
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1><?php echo $this->params['page-title']?></h1>
+                    <?=
+                Breadcrumbs::widget([
+                    'tag' => 'ol',
+                    'homeLink' =>[
+                        'label' => '<i class="fa fa-dashboard"></i> Dashboard',
+                        'encode' => false,
+                        'url' => ['/client']
+                    ],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ])
+                ?>
+                    <!--
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Dashboard</li>
                     </ol>
+                    -->
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
+                    <?= Alert::widget() ?>
                     <?php echo $content?>
                 </section>
                 <!-- /.content -->
