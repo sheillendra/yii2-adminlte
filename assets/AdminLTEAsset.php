@@ -12,18 +12,13 @@ class AdminLTEAsset extends AssetBundle {
     public $sourcePath = '@vendor/almasaeed2010/adminlte/dist';
     public $css = [
         'css/AdminLTE.min.css',
-        'css/skins/_all-skins.css'
+        'css/skins/_all-skins.min.css',
     ];
     public $js = [
-        'js/app.js',
+        'js/app.min.js'
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
-        'sheillendra\adminlte\assets\JqueryUIAsset',
-        'yii\bootstrap\BootstrapAsset',
         'yii\web\YiiAsset',
-        'sheillendra\adminlte\assets\FontAwesomeAsset',
-        'sheillendra\adminlte\assets\SlimScrollAsset'
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
-    public $publishOptions=['forceCopy'=>YII_DEBUG];
 }

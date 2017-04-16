@@ -10,7 +10,7 @@ class ICheckAsset extends AssetBundle {
     public $type = 'square';
     public $color = 'blue';
     public $sourcePath = '@bower/icheck';
-    public $js = ['icheck.js'];
+    public $js = ['icheck.min.js'];
     public $depends = [
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
