@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
  * ```
  * echo $this->render('@sheillendra/adminlte/views/_partials/grid', [
  *     'dataProvider' => $dataProvider,
- *     'searchModel' => $searchModel,
+ *     'filterModel' => $searchModel,
  *     'caption' => $caption,
  *     'tools' => $tools,
  *     'columns' => [
@@ -38,7 +38,7 @@ Pjax::begin();
 echo GridView::widget([
     'options' => ['class' => 'box box-primary'],
     'dataProvider' => $dataProvider,
-    'filterModel' => $searchModel,
+    'filterModel' => $filterModel,
     'layout' => <<<HTML
         <div class="box-header with-border">
             <h3 class="box-title">{$caption}</h3>
