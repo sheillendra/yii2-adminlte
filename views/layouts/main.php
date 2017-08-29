@@ -7,13 +7,12 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
-use backend\themes\adminlte\assets\CustomAsset;
+use sheillendra\adminlte\assets\CustomAsset;
 use sheillendra\adminlte\assets\FontAwesomeAsset;
 
 CustomAsset::register($this);
 FontAwesomeAsset::register($this);
 
-$asset = '/admin/assets/cb1c0f2a';
 ?>
 
 <?php echo $this->render('@app/views/layouts/_init_view') ?>
