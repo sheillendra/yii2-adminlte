@@ -7,7 +7,6 @@ Implement AdminLTE
 ```composer require "sheillendra/yii2-adminlte": "*"```
 
 ### config main.php
--------------
 
 ```
 components => [
@@ -38,8 +37,11 @@ components => [
 */
 ```
 
+stop here and run your uplication, you can see the default implement of adminlte theme.
+
+
 ## custom
------
+
 create file ```web/js/adminlte/custom.js``` to add custom js.
 other than that you can add new javascript file, css or images,
 and place your asset class in ```backend/themes/adminlte/assets```
