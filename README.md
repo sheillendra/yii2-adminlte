@@ -55,3 +55,52 @@ and you can replace all dafault view by creating a file with the same name :
 4. create file ```backend/themes/adminlte/views/layouts/main-footer.php``` to replace default footer.
 4. create file ```backend/themes/adminlte/views/layouts/main-sidebar.php``` to replace default sidebar.
 5. create file ```backend/themes/adminlte/views/layouts/_init-view.php``` to replace default init, like path of favicon.
+
+## components
+
+### grid
+
+change your index view from gii result :
+```
+<?php
+
+use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $searchModel backend\models\MenusSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = Yii::t('app', 'Menus Cruds');
+$this->params['breadcrumbs'][] = $this->title;
+$this->params['selectedSidebar'] = 'menu';
+?>
+<div class="menus-crud-index">
+    <?php
+    echo $this->render('@sheillendra/adminlte/views/_partials/grid', [
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'caption' => $this->title,
+        'tools' => Html::a(
+                Yii::t('app', 'Create Menu')
+                , ['create']
+                , ['class' => 'btn btn-success btn-sm']
+        ),
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'id',
+            'label',
+            'url:url',
+            'options',
+            'parent_id',
+            // 'icon',
+            // 'visible',
+            // 'created_at',
+            // 'created_by',
+            // 'updated_at',
+            // 'updated_by',
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]);
+    ?>
+</div>
+```
