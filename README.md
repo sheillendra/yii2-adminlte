@@ -37,7 +37,7 @@ components => [
 */
 ```
 
-stop here and run your uplication, you can see the default implement of adminlte theme.
+<span style="color:red">**stop here and run your aplication**, you can see the default implement of adminlte theme.<span/>
 
 
 ## custom
