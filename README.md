@@ -35,7 +35,8 @@ components => [
 */
 ```
 
-##custom
+## custom
+-----
 create file ```web/js/adminlte/custom.js``` to add custom js.
 other than that you can add new javascript file, css or images,
 and place your asset class in ```backend/themes/adminlte/assets```
