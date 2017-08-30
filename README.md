@@ -15,12 +15,15 @@ components => [
         'theme' => [
             'pathMap' => [
                 '@app/views' => [
+                    '@backend/themes/adminlte/views',
                     '@sheillendra/adminlte/views',
                 ],
                 '@app/modules' => [
+                    '@backend/themes/adminlte/modules',
                     '@sheillendra/adminlte/modules',
                 ],
                 '@app/widgets' => [
+                    '@backend/themes/adminlte/widgets',
                     '@sheillendra/adminlte/widgets',
                 ]
             ],
