@@ -22,10 +22,10 @@ class AdminLTEAsset extends AssetBundle {
         'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
     ];
     public $js = [
-        'plugins/jQuery/jquery-2.2.3.min.js',
+        //'plugins/jQuery/jquery-2.2.3.min.js',
         //'https://code.jquery.com/ui/1.11.4/jquery-ui.min.js',
         'plugins/jQueryUI/jquery-ui.min.js',
-        'bootstrap/js/bootstrap.min.js',
+        //'bootstrap/js/bootstrap.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js',
         'plugins/morris/morris.min.js',
         'plugins/sparkline/jquery.sparkline.min.js',
@@ -42,6 +42,7 @@ class AdminLTEAsset extends AssetBundle {
         'dist/js/app.min.js',
     ];
     public $depends = [
+        '\yii\web\JqueryAsset',
         '\sheillendra\adminlte\assets\FontAwesomeAsset',
         '\sheillendra\adminlte\assets\IoniconsAsset'
     ];

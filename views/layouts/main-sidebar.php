@@ -1,7 +1,7 @@
 <?php
 /* @var $adminLteAsset \yii\web\AssetBundle */
 
-use sheillendra\adminlte\widgets\Menu;
+use sheillendra\adminlte\widgets\SidebarMenu;
 
 $selectedSidebar = isset($this->params['selectedSidebar']) ? $this->params['selectedSidebar'] : '';
 $items = [
@@ -17,13 +17,11 @@ $items = [
         'items' => [
             [
                 'label' => 'Dashboard v1',
-                'icon' => 'fa fa-circle-o',
                 'url' => ['/admin-lte/dashboard-v1'],
                 'active' => $selectedSidebar == 'dashboard-v1' || !$selectedSidebar,
             ],
             [
                 'label' => 'Dashboard v2',
-                'icon' => 'fa fa-circle-o',
                 'url' => ['/admin-lte/dashboard-v2'],
                 'active' => $selectedSidebar == 'dashboard-v2',
             ],
@@ -38,27 +36,28 @@ $items = [
         'active' => $selectedSidebar == 'widgets',
     ],
     [
-        'label' => '<i class="fa fa-pie-chart"></i> <span>Charts</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>',
+        'label' => 'Charts',
         'url' => '#',
+        'icon' => 'fa fa-pie-chart',
         'options' => ['class' => 'treeview'],
         'items' => [
             [
-                'label' => '<i class="fa fa-circle-o"></i> ChartJS',
+                'label' => 'ChartJS',
                 'url' => ['/admin-lte/chart-js'],
                 'active' => $selectedSidebar == 'chart-js',
             ],
             [
-                'label' => '<i class="fa fa-circle-o"></i> Morris',
+                'label' => 'Morris',
                 'url' => ['/admin-lte/morris'],
                 'active' => $selectedSidebar == 'morris',
             ],
             [
-                'label' => '<i class="fa fa-circle-o"></i> Flot',
+                'label' => 'Flot',
                 'url' => ['/admin-lte/flot'],
                 'active' => $selectedSidebar == 'flot',
             ],
             [
-                'label' => '<i class="fa fa-circle-o"></i> Inline Charts',
+                'label' => 'Inline Charts',
                 'url' => ['/admin-lte/inline-charts'],
                 'active' => $selectedSidebar == 'inline-charts',
             ],
@@ -69,17 +68,20 @@ $items = [
         'options' => ['class' => 'header']
     ],
     [
-        'label' => '<i class="fa fa-th"></i> <span>Important</span><span class="pull-right-container">',
+        'label' => 'Important',
+        'iconColor' => 'text-red',
         'url' => ['/admin-lte/important'],
         'active' => $selectedSidebar == 'important',
     ],
     [
-        'label' => '<i class="fa fa-th"></i> <span>Warning</span><span class="pull-right-container">',
+        'label' => 'Warning',
+        'iconColor' => 'text-yellow',
         'url' => ['/admin-lte/warning'],
         'active' => $selectedSidebar == 'warning',
     ],
     [
-        'label' => '<i class="fa fa-th"></i> <span>Information</span><span class="pull-right-container">',
+        'label' => 'Information',
+        'iconColor' => 'text-blue',
         'url' => ['/admin-lte/information'],
         'active' => $selectedSidebar == 'information',
     ],
@@ -89,30 +91,12 @@ $items = [
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="<?php echo $adminLteAsset->baseUrl ?>/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <p><?php echo Yii::$app->user->identity->username ?></p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
+        <?php echo $this->render('@app/views/layouts/_sidebar-user-panel', ['adminLteAsset' => $adminLteAsset])?>
+        <?php echo $this->render('@app/views/layouts/_sidebar-search-form', ['adminLteAsset' => $adminLteAsset])?>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <?php
-        echo Menu::widget([
+        echo SidebarMenu::widget([
             'options' => ['class' => 'sidebar-menu'],
             'encodeLabels' => false,
             'items' => $items,
