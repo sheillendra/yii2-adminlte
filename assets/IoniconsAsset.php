@@ -22,4 +22,6 @@ class IoniconsAsset extends AssetBundle {
     ];
     public $js = [];
     public $depends = [];
+    public $publishOptions = ['only' => ['css/ionicons.min.css']];
+
 }

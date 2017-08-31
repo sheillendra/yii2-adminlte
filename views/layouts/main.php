@@ -8,11 +8,11 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 use sheillendra\adminlte\assets\CustomAsset;
-use sheillendra\adminlte\assets\FontAwesomeAsset;
+use sheillendra\adminlte\assets\AdminLTEAsset;
 
 CustomAsset::register($this);
-FontAwesomeAsset::register($this);
 
+$adminLteAsset = AdminLTEAsset::register($this);
 ?>
 
 <?php echo $this->render('@app/views/layouts/_init_view') ?>
@@ -63,9 +63,9 @@ FontAwesomeAsset::register($this);
     <body class="hold-transition skin-blue sidebar-mini">
         <?php $this->beginBody() ?>
         <div class="wrapper">
-            <?php echo $this->render('@app/views/layouts/main-header'); ?>
+            <?php echo $this->render('@app/views/layouts/main-header', ['adminLteAsset' => $adminLteAsset]); ?>
 
-            <?php echo $this->render('@app/views/layouts/main-sidebar'); ?>
+            <?php echo $this->render('@app/views/layouts/main-sidebar', ['adminLteAsset' => $adminLteAsset]); ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">

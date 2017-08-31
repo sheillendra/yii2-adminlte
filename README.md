@@ -4,7 +4,7 @@ Implement AdminLTE
 
 ## installation
 
-```composer require "sheillendra/yii2-adminlte": "*"```
+```composer require "sheillendra/yii2-adminlte": "dev-master"```
 
 ### config main.php
 
