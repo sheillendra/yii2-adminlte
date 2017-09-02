@@ -86,6 +86,13 @@ class SidebarMenu extends \yii\widgets\Menu {
             $items[$i]['label'] = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $hasActiveChild = false;
             if (isset($item['items'])) {
+
+                if (!isset($items[$i]['options']) || !isset($items[$i]['options']['class'])) {
+                    $items[$i]['options'] = ['class' => 'treeview'];
+                } else {
+                    $items[$i]['options']['class'] .= ' treeview';
+                }
+
                 $items[$i]['items'] = $this->normalizeItems($item['items'], $hasActiveChild);
                 if (empty($items[$i]['items']) && $this->hideEmptyItems) {
                     unset($items[$i]['items']);

@@ -12,8 +12,6 @@ $items = [
     [
         'label' => 'Dashboard',
         'icon' => 'fa fa-dashboard',
-        'url' => '#',
-        'options' => ['class' => 'treeview'],
         'items' => [
             [
                 'label' => 'Dashboard v1',
@@ -37,9 +35,7 @@ $items = [
     ],
     [
         'label' => 'Charts',
-        'url' => '#',
         'icon' => 'fa fa-pie-chart',
-        'options' => ['class' => 'treeview'],
         'items' => [
             [
                 'label' => 'ChartJS',
@@ -85,6 +81,7 @@ $items = [
         'url' => ['/admin-lte/information'],
         'active' => $selectedSidebar == 'information',
     ],
+    //replace here new menu
 ];
 ?>
 <!-- Left side column. contains the logo and sidebar -->

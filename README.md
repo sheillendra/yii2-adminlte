@@ -39,6 +39,25 @@ components => [
 
 <span style="color:red">**stop here and run your aplication**, you can see the default implement of adminlte theme.<span/>
 
+**Gii**
+
+This extension come with gii. Once the extension is installed, 
+simply modify your application configuration as follows:
+```
+// /config/main-local.php        for yii2-app-advanced
+// /config/web.php               for yii2-basic
+...
+if (!YII_ENV_TEST) {
+    // configuration adjustments for 'dev' environment 
+    ...
+    
+    $config['modules']['gii'] = [
+        'class'=>'yii\gii\Module',
+       'generators' =>[
+           'adminlte-crud' => ['class'=>'sheillendra\adminlte\gii\generators\crud\Generator']
+        ]
+    ];
+}
 
 ## custom
 
