@@ -58,6 +58,7 @@ if (!YII_ENV_TEST) {
         ]
     ];
 }
+```
 
 ## custom
 
