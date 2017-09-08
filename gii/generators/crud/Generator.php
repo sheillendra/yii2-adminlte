@@ -179,9 +179,10 @@ class Generator extends \yii\gii\Generator {
 
         $layoutPath = $this->getLayoutPath();
         if (is_file($layoutPath . '/main-sidebar.php')) {
-            
+            $mainSidebar = file_get_contents($layoutPath . '/main-sidebar.php');
+            $files[] = new CodeFile($layoutPath . '/main-sidebar.php', strtr($mainSidebar, ['//!!!replace here new menu' => $this->render('main-sidebar-item.php')]));
         } else {
-            $files[] = new CodeFile($layoutPath.'/main-sidebar.php', $this->render('main-sidebar.php'));
+            $files[] = new CodeFile($layoutPath . '/main-sidebar.php', $this->render('main-sidebar.php'));
         }
         return $files;
     }
