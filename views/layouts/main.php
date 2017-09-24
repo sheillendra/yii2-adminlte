@@ -10,12 +10,16 @@ use common\widgets\Alert;
 use sheillendra\adminlte\assets\CustomAsset;
 use sheillendra\adminlte\assets\AdminLTEAsset;
 
-CustomAsset::register($this);
-
 $adminLteAsset = AdminLTEAsset::register($this);
 ?>
 
 <?php echo $this->render('@app/views/layouts/_init_view') ?>
+
+<?php
+if (isset($this->params['useCustomAsset']) && $this->params['useCustomAsset']) {
+    CustomAsset::register($this);
+}
+?>
 
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

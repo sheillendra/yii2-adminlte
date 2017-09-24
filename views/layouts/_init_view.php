@@ -5,6 +5,7 @@
 // use backend\themes\adminlte\assets\CustomAsset;
 // CustomAsset::register($this);
 
-// set your favorite.icon
+// set your favorite icon
  $this->params['favico'] = '';
 
+ $this->params['useCustomAsset'] = false;
